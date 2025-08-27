@@ -1,0 +1,6 @@
+com/officechat/config/AppConfig.class
+com/officechat/service/ChatService.class
+com/officechat/model/MessageForm.class
+com/officechat/controller/ChatController.class
+com/officechat/OfficeChatApplication.class
+com/officechat/controller/HomeController.class
