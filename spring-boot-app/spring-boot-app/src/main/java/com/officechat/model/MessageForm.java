@@ -1,13 +1,20 @@
 package com.officechat.model;
 
-
-
 public class MessageForm {
-    private String newMessage; // or call it 'newMessage' to match your field
-    // Getter and Setter
-    public String getText() { return newMessage; }
-    public void setText(String text) { this.newMessage = text; }
-}
- 
-    
+    private String sender;
+    private String text;
 
+    public String getSender() {
+        return sender;
+    }
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getText() {
+        return text;
+    }
+    public void setText(String text) {
+        this.text = text;
+    }
+}

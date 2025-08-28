@@ -73,17 +73,29 @@
 <body>
     <div id="chat-container">
         <h2>Office Chatbot</h2>
-      <div id="messages">
+        <p th:if="${userName == null}">
+            <a href="/oauth2/authorization/openam" class="btn btn-primary">
+             <i class="fas fa-sign-in-alt"></i> Log in with OpenAM
+            </a>
+        </p>
+
+     <div th:if="${userName != null}">
+        <div id="messages">
     <div class="message" th:each="message : ${messages}" th:class="${message.sender}">
         <span th:text="${message.text}"></span>
     </div>
 </div>
 
         <div id="input-container">
-            <input type="text" id="message-input" placeholder="Type your message..." />
-<button id="send-button" onclick="sendMessage()">Send</button>
+             <!-- Chat form and messages -->
+            <form th:action="@{/chat}" method="post">
+             <input type="text" id="message-input" placeholder="Type your message..." />
+             <button id="send-button" onclick="sendMessage()">Send</button>
+            </form>
         </div>
     </div>
+    </div>
+    <a href="/">Back</a>
 
     <script>
         document.getElementById("message-input").addEventListener("keydown", function(event) {
